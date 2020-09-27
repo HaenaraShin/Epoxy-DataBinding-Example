@@ -31,7 +31,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="타이틀" />
+            tools:text="Title" />
 
         <TextView
             android:id="@+id/tv_subtitle"
@@ -43,7 +43,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="서브타이틀" />
+            tools:text="Subtitle" />
 
         <Button
             android:id="@+id/btn"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dip"
             android:onClick="@{onClick}"
-            android:text="화인"
+            android:text="Confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
