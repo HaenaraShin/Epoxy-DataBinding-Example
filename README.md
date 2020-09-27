@@ -52,6 +52,8 @@ For now, [`4.1.0` is the latest version of Epoxy library.](https://github.com/ai
 
 **⚠️ These file may be located on same pacakage with R.**
 
+**You don't have to use both `EpoxyDataBindingPatterns` and `EpoxyConfig`**
+
 ### 2-1. EpoxyDataBindingPattern
 If names of resource files has some patterns, use [EpoxyDataBindingPatterns](https://github.com/HaenaraShin/Epoxy-DataBinding-Example/blob/master/app/src/main/java/dev/haenara/epoxyexample/EpoxyDataBindingPatterns.kt). 
 
