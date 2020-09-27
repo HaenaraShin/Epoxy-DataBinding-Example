@@ -1,4 +1,4 @@
-package com.classnote.epoxyexample
+package dev.haenara.epoxyexample
 
 import com.airbnb.epoxy.EpoxyDataBindingPattern
 

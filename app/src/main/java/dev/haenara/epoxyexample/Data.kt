@@ -1,3 +1,3 @@
-package com.classnote.epoxyexample
+package dev.haenara.epoxyexample
 
 data class Data(val title: String, val subtitle: String)

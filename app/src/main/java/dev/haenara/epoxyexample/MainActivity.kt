@@ -1,4 +1,4 @@
-package com.classnote.epoxyexample
+package dev.haenara.epoxyexample
 
 import android.os.Bundle
 import android.widget.Toast
@@ -12,13 +12,15 @@ class MainActivity : AppCompatActivity() {
 
         recycler_view.setController(
             SampleController(
-                SampleViewModel(createData(), onClick = {
-                    Toast.makeText(
-                        this@MainActivity,
-                        "${it}번째 아이템이 클릭되었습니다.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                })
+                SampleViewModel(
+                    createData(),
+                    onClick = {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "${it}번째 아이템이 클릭되었습니다.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    })
             )
         )
         recycler_view.requestModelBuild()
