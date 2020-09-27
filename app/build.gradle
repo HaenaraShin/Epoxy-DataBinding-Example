@@ -28,7 +28,7 @@ android {
     }
   }
 
-  // 데이터 바인딩
+  // DataBinding
   buildFeatures {
     dataBinding true
   }
@@ -53,6 +53,6 @@ dependencies {
   // epoxy
   kapt "com.airbnb.android:epoxy-processor:4.1.0"
   implementation "com.airbnb.android:epoxy:4.1.0"
-  implementation 'com.airbnb.android:epoxy-databinding:4.1.0' // (or latest Epoxy version)
+  implementation 'com.airbnb.android:epoxy-databinding:4.1.0'
   annotationProcessor "com.airbnb.android:epoxy-processor:4.1.0"
 }
