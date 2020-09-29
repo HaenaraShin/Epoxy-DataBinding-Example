@@ -6,8 +6,11 @@
     <data>
 
         <variable
-            name="data"
-            type="dev.haenara.epoxyexample.Data" />
+            name="title"
+            type="String" />
+        <variable
+            name="subtitle"
+            type="String" />
         <variable
             name="onClick"
             type="android.view.View.OnClickListener" />
@@ -23,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dip"
-            android:text="@{data.title}"
+            android:text="@{title}"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -38,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dip"
-            android:text="@{data.subtitle}"
+            android:text="@{subtitle}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title"

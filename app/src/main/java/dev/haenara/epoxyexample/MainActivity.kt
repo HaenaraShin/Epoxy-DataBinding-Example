@@ -6,23 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private val controller = SampleController(
+        createData(),
+        onClick = {
+            Toast.makeText(
+                this@MainActivity,
+                "${it.title} has clicked.",
+                Toast.LENGTH_SHORT
+            ).show()
+        })
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        recycler_view.setController(
-            SampleController(
-                SampleViewModel(
-                    createData(),
-                    onClick = {
-                        Toast.makeText(
-                            this@MainActivity,
-                            "${it}번째 아이템이 클릭되었습니다.",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    })
-            )
-        )
+        recycler_view.setController(controller)
         recycler_view.requestModelBuild()
     }
 

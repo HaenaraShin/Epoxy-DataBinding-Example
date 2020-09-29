@@ -2,20 +2,25 @@ package dev.haenara.epoxyexample
 
 import com.airbnb.epoxy.EpoxyController
 
-class SampleController(val viewModel: SampleViewModel) : EpoxyController() {
+class SampleController(
+    private val dataList: List<Data>,
+    private val onClick: (Data) -> Unit
+) :
+    EpoxyController() {
     override fun buildModels() {
-        viewModel.data.forEachIndexed { index, data ->
-            sample {
+        dataList.forEachIndexed { index, data ->
+            itemSample {
                 id("sample$index")
-                data(data)
+                title(data.title)
+                subtitle(data.subtitle)
                 onClick { _ ->
-                    viewModel.onClick(index)
+                    onClick(data)
                 }
             }
             if ((index + 1) % 10 == 0) {
-                advertise {
+                itemAdvertise {
                     id("AD$index")
-                    advertise("광고 ID:$index")
+                    advertise("AD ID:$index")
                 }
             }
         }

@@ -5,4 +5,4 @@
 //
 //@PackageModelViewConfig(rClass = R::class)
 //@EpoxyDataBindingLayouts(R.layout.item_sample)
-//internal interface EpoxyConfig 
+//internal interface EpoxyConfig

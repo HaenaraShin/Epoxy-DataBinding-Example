@@ -63,7 +63,7 @@ package dev.haenara.epoxyexample
 
 import com.airbnb.epoxy.EpoxyDataBindingPattern
 
-@EpoxyDataBindingPattern(rClass = R::class, layoutPrefix = "item_")
+@EpoxyDataBindingPattern(rClass = R::class, layoutPrefix = "epoxy_")
 object EpoxyDataBindingPatterns
 
 ```
@@ -80,7 +80,7 @@ import com.airbnb.epoxy.EpoxyDataBindingLayouts
 import com.airbnb.epoxy.PackageModelViewConfig
 
 @PackageModelViewConfig(rClass = R::class)
-@EpoxyDataBindingLayouts(R.layout.item_sample)
+@EpoxyDataBindingLayouts(R.layout.epoxy_item_sample)
 interface EpoxyConfig 
 ```
 If you use R2, use it instead of `R::class`
@@ -100,7 +100,7 @@ Use RecyclerView from epoxy libaray instead of `Android Jetpack🚀`.
 
 Model files that inherits `EpoxyModel` would be generated automatically when you build your project👷.
 
-Check this [sample file](https://github.com/HaenaraShin/Epoxy-DataBinding-Example/blob/master/app/src/main/res/layout/item_sample.xml).
+Check this [sample file](https://github.com/HaenaraShin/Epoxy-DataBinding-Example/blob/master/app/src/main/res/layout/epoxy_item_sample.xml).
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -166,9 +166,11 @@ Check this [sample file](https://github.com/HaenaraShin/Epoxy-DataBinding-Exampl
 
 ```
 
-Since this resource file's name is `item_sample.xml`, the generated file name would be `ItemSample`. 
+Since this resource file's name is `epoxy_item_sample.xml`, the generated file name would be `EpoxyItemSample`. 
 
-Using EpoxyDataBindingPattern, the file name would start after prefix. For instance `Sample` when prefix is "item_".
+Using EpoxyDataBindingPattern, the file name would start after prefix. For instance `ItemSample` when prefix is "epoxy_".
+
+Also a closure has been created as same name as models but starting a lower letter like `itemSample`, so that you can easily define `ItemSample` in EpoxyController.   
 
 > If a model file hasn't be generated, build or assemble once. 
 
@@ -192,14 +194,18 @@ Instead of `EpoxyController`, you may use `TypedEpoxyController` with generic. (
 
 ```
     override fun buildModels() {
-        data.forEachIndexed { index, data ->
-            sample {
+        dataList.forEachIndexed { index, data ->
+            itemSample {
                 id("sample$index")
-                data(data)
-                onClick { _ -> }
+                title(data.title)
+                subtitle(data.subtitle)
+                onClick { _ ->
+                    onClick(data)
+                }
             }
         }
     }
+
 ```
 
 Inside of `buildModels()`, you can put model on RecyclerView as just declaring model with simple closure.
